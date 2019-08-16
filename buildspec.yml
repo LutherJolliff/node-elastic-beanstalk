@@ -8,6 +8,10 @@ phases:
     commands:
       - echo Installing source NPM dependencies...
       - npm install
+      - echo Running Lint Tests
+      - npm run lint
+      - echo Running Unit Tests
+      - npm test
   build:
     commands:
       - # Build command 1
@@ -21,3 +25,6 @@ artifacts:
     - package.json
     - node_modules
     - # ... any other output files
+cache:
+  paths:
+    - node_modules
